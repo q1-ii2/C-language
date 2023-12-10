@@ -1,0 +1,15 @@
+int main()
+{
+	int a, i, j, k;
+	while (1)
+	{
+		printf("请输入一个三位数(输入0结束)：");
+		scanf("%d", &a);
+		i = a / 100;
+		j = a % 100 / 10;
+		k = a % 10;
+		if (a == i * i * i + j * j * j + k * k * k)printf("%d是水仙花数\n", a);
+		if (a == 0)break;
+	}
+	return 0;
+}
