@@ -1,0 +1,14 @@
+int main()
+{
+	int a = 0;
+	printf("输入一个大于2的数:");
+	scanf("%d", &a);
+	for (int i = 2; i < a; i++)
+	{
+		if (a % i != 0)
+		{
+			printf("这个数是素数"); break;
+		}
+		else printf("这个数不是素数");
+	}
+}
