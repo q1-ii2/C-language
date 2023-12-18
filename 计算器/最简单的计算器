@@ -31,23 +31,29 @@ int main(void)
 		menu();
 		printf("请选择:>");
 		scanf("%d", &input);
-		printf("请输入你想要计算的两个数:");
-		scanf("%d%d", &x, &y);
 		switch (input) {
 		case 1:
+        printf("请输入你想要计算的两个数:");
+		scanf("%d%d", &x, &y);
 			ret = Add(x, y);
 			printf("%d\n", ret);
 			break;
 		case 2:
-			ret = Sub(x, y);
+		printf("请输入你想要计算的两个数:");
+		scanf("%d%d", &x, &y);
+        	ret = Sub(x, y);
 			printf("%d\n", ret);
 			break;
 		case 3:
-			ret = Mul(x, y);
+		printf("请输入你想要计算的两个数:");
+		scanf("%d%d", &x, &y);
+        	ret = Mul(x, y);
 			printf("%d\n", ret);
 			break;
 		case 4:
-			ret = Div(x, y);
+		printf("请输入你想要计算的两个数:");
+		scanf("%d%d", &x, &y);
+        	ret = Div(x, y);
 			printf("%d\n", ret);
 			break;
 		case 0:
