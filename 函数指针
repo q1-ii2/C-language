@@ -1,0 +1,36 @@
+int test(const char* str)
+{
+	printf("test()\n");
+	return 0;
+}
+int main(void)
+{
+	//指针数组
+	int* arr[4];
+	char* ch[5];
+	//数组指针
+	int arr2[5];
+	int(*pa)[5] = &arr2;
+
+	char* arr3[6];
+	char* (*p3)[6] = &arr3;
+
+	int (*pf)(const char*) = &test;
+	(pf)("abc");
+	//pf和test
+	test("abc");
+
+	(*(void (*)())0)();
+	//以上代码是一次函数调用,调用的是0作为地址处的函数.
+	//1.把0强制类型转换为:无参,返回类型是void的函数的地址
+	//2.调用0地址处的这个函数
+
+	void(*signal(int, void(*)(int)))(int);
+	//signal是函数名,以上代码是一次函数声明
+	//声明的signal函数是第一个函数的类型是int,第二参数的类型是函数指针,该函数指针指向的函数是int,
+	//返回类型是void,signal函数的返回类型也是一个函数指针,该函数指针指向的的函数是int,返回类型是void
+	typedef void(*pf_t)(int);//把void(*)(int)类型重命名为pf_5
+	pf_t signal(int, pf_t);//和上面的同理
+	system("pause");
+	return 0;
+}
