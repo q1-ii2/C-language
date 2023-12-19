@@ -50,6 +50,14 @@ int main(void)
     printf("%d\n", sizeof(&arr+1));//4/8
     printf("%d\n", sizeof(&arr[0]+1));//4/8
     //&arr[0]+1是第二个元素的地址 
+
+    printf("%d\n", strlen(arr));//随机值>=6
+    printf("%d\n", strlen(arr + 0));//随机值>=6
+    printf("%d\n", strlen(*arr));//-->strlen('a');-->strlen(97); //野指针
+    printf("%d\n", strlen(arr[1]));//-->strlen('b');-->strlen(98); //野指针
+    printf("%d\n", strlen(&arr));//随机值
+    printf("%d\n", strlen(&arr + 1));//随机值-6
+    printf("%d\n", strlen(&arr[0] + 1));//随机值-1
 	system("pause");
 	return 0;
 }
