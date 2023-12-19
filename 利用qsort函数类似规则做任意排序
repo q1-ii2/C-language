@@ -89,15 +89,15 @@ void test2()
 	int sz = sizeof(s) / sizeof(s[0]);
 	//qsort(s, sz, sizeof(s[0]), com_stu_by_name);
 	qsort(s, sz, sizeof(s[0]), com_stu_by_age);
-	for (int i = 0; i < 3; i++)printf("%d %s\n", s[i].name, s[i].age);
+	for (int i = 0; i < 3; i++)printf("%s %d\n", s[i].name, s[i].age);
 }
 
 
 
 int main()
 {
-	test2();
-	//test3();
+	//test2();
+	test3();
 	//for(int i=0;i<3;i++)printf("%s %d\n",s.name,s.age)
 	return 0;
 }
