@@ -68,6 +68,18 @@ int main(void)
     printf("%d\n", sizeof(&arr));//4/8
     printf("%d\n", sizeof(&arr+1));//4/8
     printf("%d\n", sizeof(&arr[0]+1));//4/8
+
+    //strlen是求字符串长度的，关注的是字符串中的\0,计算的是\0之前出现的字符的个数
+    //strlen是库函数,只针对字符串
+    //sizeof只关注空间的大小,不在乎内存中放的是什么
+    //sizeof是操作符
+    printf("%d\n", strlen(arr));//6
+    printf("%d\n", strlen(arr + 0));//6
+    printf("%d\n", strlen(*arr));//err
+    printf("%d\n", strlen(arr[1]));//err
+    printf("%d\n", strlen(&arr));//6
+    printf("%d\n", strlen(&arr + 1));//随机值
+    printf("%d\n", strlen(&arr[0] + 1));//5
     system("pause");
 	return 0;
 }
