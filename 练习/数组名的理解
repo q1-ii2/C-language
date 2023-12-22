@@ -89,7 +89,17 @@ int main(void)
     printf("%d\n", sizeof(p[0]));//1
     printf("%d\n", sizeof(&p));//4/8
     printf("%d\n", sizeof(&p + 1));//4/8
-    printf("%d\n", sizeof(&p[0]+1));//1
+    printf("%d\n", sizeof(&p[0]+1));//4/8
+    
+    printf("%d\n", strlen(p));//6
+	printf("%d\n", strlen(p + 1));//5
+	printf("%d\n", strlen(*p));//err
+	printf("%d\n", strlen(p[0]));//err
+	printf("%d\n", strlen(& p));//随机值
+	printf("%d\n", strlen(&p + 1));//随机值
+	printf("%d\n", strlen(&p[0] + 1));//5
+
+
     system("pause");
 	return 0;
 }
