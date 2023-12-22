@@ -80,6 +80,16 @@ int main(void)
     printf("%d\n", strlen(&arr));//6
     printf("%d\n", strlen(&arr + 1));//随机值
     printf("%d\n", strlen(&arr[0] + 1));//5
+    
+    char* p = "abcdef";
+    //abcdef\0是一个常量字符串 *p指向的是首地址
+    printf("%d\n", sizeof(p));//4/8
+    printf("%d\n", sizeof(p+1));//4/8
+    printf("%d\n", sizeof(*p));//1
+    printf("%d\n", sizeof(p[0]));//1
+    printf("%d\n", sizeof(&p));//4/8
+    printf("%d\n", sizeof(&p + 1));//4/8
+    printf("%d\n", sizeof(&p[0]+1));//1
     system("pause");
 	return 0;
 }
