@@ -7,6 +7,7 @@ int main(void)
 	return 0;
 }
 //输出结果为2,5
+
 //(&a+1)中&a表示的是整个数组+1就是指向下一个数组
 
 struct Test
@@ -32,3 +33,16 @@ int main()
 	printf("%p\n", (unsigned short*)p + 0x1);
 }
 //输出结果为0x1000014 0x100001 0x100004
+
+int main()
+{
+	int a[4] = { 1,2,3,4 };
+	int* ptr1 = (int*)(&a + 1);
+	int* ptr2 = (int*)((int)a + 1);
+	printf("%x,%x", ptr1[-1], *ptr2);
+	//01 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00
+	//	 ^-ptr2										 ^-ptr1
+	//ptr2要调用的话,向后访问一个整形,以小端形式返回一个值就是02000000
+	return 0;
+}
+//输出结果为4,2000000
